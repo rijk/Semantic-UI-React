@@ -14,6 +14,7 @@ import {
   useValueAndKey,
   useWidthProp,
 } from '../../lib'
+import { createShorthand } from '../../factories'
 import MenuHeader from './MenuHeader'
 import MenuItem from './MenuItem'
 import MenuMenu from './MenuMenu'
