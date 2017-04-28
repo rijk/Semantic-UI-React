@@ -1058,8 +1058,8 @@ export default class Dropdown extends Component {
     return (
       <select type='hidden' aria-hidden='true' name={name} value={value} multiple={multiple}>
         <option value='' />
-        {_.map(options, option => (
-          <option key={option.value} value={option.value}>{option.text}</option>
+        {_.map(options, (option, i) => (
+          <option key={option.key || option.value} value={option.value}>{option.text}</option>
         ))}
       </select>
     )
@@ -1152,7 +1152,7 @@ export default class Dropdown extends Component {
 
     return _.map(options, (opt, i) => (
       <DropdownItem
-        key={`${opt.value}-${i}`}
+        key={opt.key || `${opt.value}-${i}`}
         active={isActive(opt.value)}
         onClick={this.handleItemClick}
         selected={selectedIndex === i}
